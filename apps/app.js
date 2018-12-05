@@ -1,4 +1,4 @@
-const apikey = '39257a0657164b95ae3f8735d4ab335a'
+const apikey = '4e413a7f1dd6462ea3582844506d94b9'
 const main = document.querySelector('main');
 
 window.addEventListener('load', e => {
@@ -6,7 +6,7 @@ window.addEventListener('load', e => {
 })
 
 async function updateGames() {
-	const res = await fetch('https://newsapi.org/v2/everything?q=bitcoin&from=2018-11-04&sortBy=publishedAt&apiKey=${apikey}')
+	const res = await fetch(`https://newsapi.org/v2/everything?q=apple&from=2018-12-04&to=2018-12-04&sortBy=popularity&apiKey=${apikey}`)
 	const json = await res.json();
 
 	main.innerHTML = json.articles.map(createArticle).join('\n');
